@@ -1,4 +1,4 @@
 [tool.aerich]
 tortoise_orm = "core.settings.DB_CONFIG"
-location = "src/database/migrations"
-src_folder = "./src"
+location = "scr/database/migrations"
+src_folder = "./scr"

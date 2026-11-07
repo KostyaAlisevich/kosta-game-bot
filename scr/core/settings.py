@@ -8,7 +8,7 @@ TOKEN = os.getenv('TOKEN')
 ADMIN_ID = os.getenv('ADMIN_ID')
 
 
-BASE_DIR = os.path.join(os.getcwd(), 'src')
+BASE_DIR = os.path.join(os.getcwd(), 'scr')
 
 
 # Assets
