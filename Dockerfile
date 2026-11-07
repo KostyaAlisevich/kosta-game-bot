@@ -9,4 +9,4 @@ COPY . .
 
 RUN aerich upgrade
 
-CMD python src/main.py
+CMD python scr/main.py
