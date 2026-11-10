@@ -12,6 +12,8 @@ RUN python -c "import zipfile; zipfile.ZipFile('/tmp/bot.zip').extractall('/tmp/
     && rm -rf /tmp/x /tmp/bot.zip \
     && (test -f /bot/src/main.py || (echo "ОШИБКА: в архиве нет src/main.py - загрузили не тот архив?" && exit 1))
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Fix conflicting pin: asyncpg 0.29.0 requires async-timeout>=4.0.3
+RUN sed -i -E 's/^async[-_]timeout[[:space:]]*==[[:space:]]*4\.0\.2/async-timeout==4.0.3/I' requirements.txt \
+    && pip install --no-cache-dir -r requirements.txt
 
 CMD ["python", "src/main.py"]
